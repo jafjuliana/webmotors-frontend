@@ -30,6 +30,14 @@ export const Header = styled.div`
       color: #fff;
     }
   }
+
+  @media (max-width: 932px) {
+    text-align: center;
+
+    button {
+      float: none;
+    }
+  }
 `;
 
 export const ListType = styled.ul`
@@ -64,6 +72,16 @@ export const ListType = styled.ul`
 
     span {
       font-size: 1.5rem;
+    }
+  }
+
+  @media (max-width: 932px) {
+    width: 100%;
+
+    li {
+      margin-right: 0;
+      width: calc(50% - 30px);
+      text-align: left;
     }
   }
 `;
