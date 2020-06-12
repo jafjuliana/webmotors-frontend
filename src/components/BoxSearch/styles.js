@@ -127,15 +127,78 @@ export const ListType = styled.ul`
 
 export const Content = styled.div`
   background: #fff;
-  width: 100%;
+  width: calc(100% - 100px);
   float: left;
   padding: 25px 50px;
   color: #44474c;
   font-size: 0.9rem;
 
+  @media (max-width: 932px) {
+    padding: 25px;
+    width: calc(100% - 50px);
+  }
+
   .line {
     width: 100%;
     float: left;
+    margin-bottom: 8px;
+
+    .column {
+      float: left;
+      width: 50%;
+
+      &:last-child {
+        text-align: right;
+      }
+    }
+
+    button,
+    select {
+      outline: 0;
+      cursor: pointer;
+    }
+
+    &:last-child {
+      margin-top: 25px;
+    }
+
+    button {
+      border: 0;
+      box-shadow: none;
+      background: #fff;
+    }
+
+    .search {
+      margin-top: 11px;
+
+      svg {
+        margin-bottom: -2px;
+      }
+
+      padding: 0;
+      color: #b92630;
+      font-weight: bold;
+      font-size: 0.9rem;
+    }
+
+    .clear {
+      font-size: 0.9rem;
+      color: #44474c;
+    }
+
+    .filter {
+      background: #b92631;
+      text-align: center;
+      font-weight: bold;
+      color: #fff;
+      text-transform: uppercase;
+      border-radius: 2px;
+      padding: 10px;
+      font-size: 1rem;
+      max-width: 240px;
+      width: 100%;
+      margin-left: 15px;
+    }
 
     .contChecbox {
       display: block;
@@ -191,6 +254,22 @@ export const Content = styled.div`
       -webkit-transform: rotate(45deg);
       -ms-transform: rotate(45deg);
       transform: rotate(45deg);
+    }
+
+    @media (max-width: 932px) {
+      .filter {
+        margin-left: 0;
+        max-width: 100%;
+      }
+
+      .column {
+        width: 100%;
+
+        &:last-child {
+          margin-top: 25px;
+          text-align: center;
+        }
+      }
     }
   }
 `;

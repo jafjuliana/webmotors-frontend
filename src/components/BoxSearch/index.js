@@ -66,15 +66,22 @@ function BoxSearch({ makes }) {
             </label>
           </div>
           <div className="line"></div>
-          <div className="line"></div>
           <div className="line">
-            <div className="column column1">
-              <p>
+            <div className="column">
+              <button type="button" className="search">
                 <MdChevronRight />
                 Busca Avançada
-              </p>
+              </button>
             </div>
-            <div className="column column2"></div>
+            <div className="column">
+              <button type="button" className="clear">
+                Limpar filtros
+              </button>
+
+              <button type="button" className="filter">
+                Ver ofertas
+              </button>
+            </div>
           </div>
         </Content>
       </div>
