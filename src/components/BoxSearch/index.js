@@ -94,34 +94,46 @@ function BoxSearch({ makes }) {
             </label>
           </div>
 
-          <div className="line">
-            <label htmlFor="makes">Marca:</label>
-            <select name="makes" id="makes" onChange={handleMakes}>
-              <option>Todos</option>
-              {makes.map((make) => (
-                <option key={make.ID} value={make.ID}>
-                  {make.Name}
-                </option>
-              ))}
-            </select>
-
-            <label htmlFor="models">Modelos:</label>
-            <select
-              name="models"
-              id="models"
-              onChange={handleModel}
-              disabled={listModels.length === 0}
-            >
-              <option>Todos</option>
-              {listModels.length > 0 &&
-                listModels.map((model) => (
-                  <option key={model.ID} value={model.ID}>
-                    {model.Name}
+          <div className="line lineAlign">
+            <div className="column">
+              <label htmlFor="makes" className="title">
+                Marca:
+              </label>
+              <select name="makes" id="makes" onChange={handleMakes}>
+                <option>Todos</option>
+                {makes.map((make) => (
+                  <option key={make.ID} value={make.ID}>
+                    {make.Name}
                   </option>
                 ))}
-            </select>
+              </select>
+            </div>
 
-            <label htmlFor="versions">Versões:</label>
+            <div className="column">
+              <label htmlFor="models" className="title">
+                Modelos:
+              </label>
+              <select
+                name="models"
+                id="models"
+                onChange={handleModel}
+                disabled={listModels.length === 0}
+              >
+                <option>Todos</option>
+                {listModels.length > 0 &&
+                  listModels.map((model) => (
+                    <option key={model.ID} value={model.ID}>
+                      {model.Name}
+                    </option>
+                  ))}
+              </select>
+            </div>
+          </div>
+
+          <div className="line">
+            <label htmlFor="versions" className="title">
+              Versões:
+            </label>
             <select
               name="versions"
               id="versions"

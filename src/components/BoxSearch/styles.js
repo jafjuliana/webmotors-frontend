@@ -141,7 +141,36 @@ export const Content = styled.div`
   .line {
     width: 100%;
     float: left;
-    margin-bottom: 8px;
+    margin-bottom: 20px;
+
+    select {
+      width: 100%;
+      padding: 10px;
+      color: #44474c;
+      border-color: #44474c;
+      border-radius: 2px;
+    }
+
+    label.title {
+      width: 100%;
+      float: left;
+      margin-bottom: 5px;
+    }
+
+    &:first-child {
+      margin-bottom: 20px;
+    }
+
+    &.lineAlign {
+      .column {
+        width: 49%;
+
+        &:last-child {
+          text-align: left;
+          margin-left: 2%;
+        }
+      }
+    }
 
     .column {
       float: left;
@@ -262,12 +291,26 @@ export const Content = styled.div`
         max-width: 100%;
       }
 
+      .clear {
+        margin-bottom: 5px;
+      }
+
       .column {
         width: 100%;
 
         &:last-child {
           margin-top: 25px;
           text-align: center;
+        }
+      }
+
+      &.lineAlign {
+        .column {
+          width: 100%;
+
+          &:last-child {
+            margin-left: 0;
+          }
         }
       }
     }
