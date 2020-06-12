@@ -65,7 +65,17 @@ function BoxSearch({ makes }) {
               <span className="checkView"></span>
             </label>
           </div>
-          <div className="line"></div>
+
+          <div className="line">
+            <label for="makes">Marca:</label>
+
+            <select name="makes" id="makes">
+              {makes.map((make) => (
+                <option value={make.ID}>{make.Name}</option>
+              ))}
+            </select>
+          </div>
+
           <div className="line">
             <div className="column">
               <button type="button" className="search">
