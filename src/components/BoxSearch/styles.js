@@ -9,8 +9,30 @@ export const Box = styled.div`
     max-width: 933px;
     width: 100%;
   }
+
+  .isMobile {
+    display: none;
+  }
+
+  .isDesktop {
+  }
+
+  @media (max-width: 932px) {
+    .isMobile {
+      display: initial;
+      margin-bottom: 20px;
+    }
+
+    .isDesktop {
+      display: none;
+    }
+  }
 `;
+
 export const Header = styled.div`
+  width: 100%;
+  float: left;
+
   button {
     float: right;
     box-shadow: none;
@@ -45,9 +67,11 @@ export const ListType = styled.ul`
   padding: 0;
   float: left;
   margin-top: 0;
+  margin-bottom: 0;
 
   li {
     float: left;
+    display: flex;
     text-transform: uppercase;
     padding: 0 15px 10px;
     margin-right: 2px;
@@ -57,11 +81,26 @@ export const ListType = styled.ul`
     border-bottom: 3px solid #f3f5f8;
     transition: 0.3s;
 
+    .icon {
+      width: 45px;
+      font-size: 2rem;
+      position: relative;
+
+      svg {
+        position: absolute;
+        bottom: 0;
+      }
+    }
+
     &:hover,
     &.active {
       border-color: #b92630;
 
       span {
+        color: #b92630;
+      }
+
+      .icon {
         color: #b92630;
       }
     }
@@ -82,6 +121,76 @@ export const ListType = styled.ul`
       margin-right: 0;
       width: calc(50% - 30px);
       text-align: left;
+    }
+  }
+`;
+
+export const Content = styled.div`
+  background: #fff;
+  width: 100%;
+  float: left;
+  padding: 25px 50px;
+  color: #44474c;
+  font-size: 0.9rem;
+
+  .line {
+    width: 100%;
+    float: left;
+
+    .contChecbox {
+      display: block;
+      position: relative;
+      padding-left: 26px;
+      cursor: pointer;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      float: left;
+
+      &:first-child {
+        margin-right: 50px;
+      }
+    }
+
+    .contChecbox input {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+      height: 0;
+      width: 0;
+    }
+
+    .checkView {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 18px;
+      width: 18px;
+      border: 1px solid #ccc;
+      border-radius: 2px;
+    }
+
+    .checkView:after {
+      content: "";
+      position: absolute;
+      display: none;
+    }
+
+    .contChecbox input:checked ~ .checkView:after {
+      display: block;
+    }
+
+    .contChecbox .checkView:after {
+      left: 6px;
+      top: 2px;
+      width: 4px;
+      height: 8px;
+      border: solid #b92630;
+      border-width: 0 3px 3px 0;
+      -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      transform: rotate(45deg);
     }
   }
 `;
